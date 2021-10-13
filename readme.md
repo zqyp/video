@@ -1,7 +1,7 @@
 ## 目录结构 
 1. app是存放挂载信息的文件夹，存放springboot.jar和外部可修改的文件。
 2. deploy是docker创建镜像的文件夹。
-
+## 
 1. 进入deploy, build
 
    ```bash
