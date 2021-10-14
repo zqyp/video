@@ -8,6 +8,6 @@ COPY hcnet ./home/opt/hcnet
 
 #ADD /video-0.0.1-SNAPSHOT.jar video.jar
 
-ENTRYPOINT ["java","-jar","/usr/local/docker-apps/video/app/video-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/usr/local/docker-apps/video/app/video-0.0.1-SNAPSHOT.jar","--spring.config.location=/usr/local/docker-apps/video/app/application.yml"]
 
 EXPOSE 8003

@@ -9,12 +9,12 @@
    ```
 
 2. run
-
    ```bash
    docker run -d -p 8003:8003 --name video -e TZ="Asia/Shanghai" -v /etc/localtime:/etc/localtime:ro -v /usr/local/docker-apps/video/app:/usr/local/docker-apps/video/app zzpp/video:v2
    ```
-
+   
    
 
 #### 挂载主机时间 统一时区
--e TZ="Asia/Shanghai" -v /etc/localtime:/etc/localtime:ro 
+1. -e TZ="Asia/Shanghai" -v /etc/localtime:/etc/localtime:ro 
+2. docker默认在容器的根目录执行java -jar启动命令，需要把配置文件挂载到根目录。
