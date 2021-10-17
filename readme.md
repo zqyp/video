@@ -6,10 +6,10 @@
    mkdir -p /usr/local/docker-apps/
    ```
    
-2. 拉取videoDocker项目：
+2. 拉取video项目：
 
    ```bash
-   git clone https://github.com/zqyp/videoDocker.git
+   git clone https://github.com/zqyp/video.git
    ```
 
 3. 进入video/app/下，放入项目启动需要的video-0.0.1-SNAPSHOT.jar、application.yml、camera.txt文件。
