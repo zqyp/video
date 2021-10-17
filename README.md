@@ -3,6 +3,8 @@
 
 的dockerfile文件配置。
 
+---
+
 1. 新建/usr/local/docker-apps/文件夹：存放运行的项目。
 
    ```bash
