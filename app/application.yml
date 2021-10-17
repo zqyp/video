@@ -1,0 +1,38 @@
+
+server:
+  port: 8003
+
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/center?characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&autoReconnect=true&useUnicode=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+logging:
+  pattern:
+    file: "%d %-20level [%thread] %logger : %msg%n"
+  file:
+    name: logs/v.log
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB
+      max-history: 10
+
+ffmpeg:
+  pixel: 640*360
+
+live-url:
+  ip: 192.168.56.104
+  port: 9000
+  application-name: videoMonitor
+
+station-udp:
+  communicate: true
+  xa-ip: 127.0.0.1
+  xa-port: 6678
+  sy-ip: 127.0.0.1
+  sy-port: 6668
+  wh-ip: 127.0.0.1
+  wh-port: 6669
