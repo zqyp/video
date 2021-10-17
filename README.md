@@ -1,4 +1,4 @@
-###说明
+### 说明
    这是一个使用docker 启动app/ 下指定xxx.jar的项目，app下的路径均为绝对路径，参见deploy/下
 
 的dockerfile文件配置。
