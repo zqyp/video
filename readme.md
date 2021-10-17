@@ -1,20 +1,42 @@
-## 目录结构 
-1. app是存放挂载信息的文件夹，存放springboot.jar和外部可修改的文件。
-2. deploy是docker创建镜像的文件夹。
 ## 使用
-1. 进入deploy, build
+
+1. 新建/usr/local/docker-apps/文件夹：存放运行的项目。
 
    ```bash
-   docker build -t zzpp/video:v2 .
+   mkdir -p /usr/local/docker-apps/
    ```
+   
+2. 拉取videoDocker项目并修改项目名：
 
-2. run
    ```bash
-   docker run -d -p 8003:8003 --name video -e TZ="Asia/Shanghai" -v /etc/localtime:/etc/localtime:ro -v /usr/local/docker-apps/video/app:/usr/local/docker-apps/video/app zzpp/video:v2
+   git clone https://github.com/zqyp/videoDocker.git
+   mv /videoDocker video
    ```
-   
-   
 
-#### 挂载主机时间 统一时区
-1. -e TZ="Asia/Shanghai" -v /etc/localtime:/etc/localtime:ro 
-2. docker默认在容器的根目录执行java -jar启动命令，需要把配置文件挂载到根目录。
+3. 进入video/app/下，放入项目启动需要的video-0.0.1-SNAPSHOT.jar、application.yml、camera.txt文件。
+
+4. 两种启动方式：
+
+   1） 拉取制作好的镜像，步骤简单。
+
+      与docker-compose-hub.ym同层目录，运行docker-compose-hub.yml,启动项目：
+
+      ```bash
+      docker-compose -f docker-compose-hub.yml up -d
+      ```
+
+   2） 重新build镜像。 
+
+      （1） 在docker-apps/文件夹下，拉取nginx-http-flv:
+
+      ```bash
+      git clone https://github.com/zqyp/nginx-http-flv.git
+      ```
+
+      （2）与docker-compose-build.ym同层目， 运行docker-compose-build.yml（build）,启动项目：
+
+      ```bash
+      docker-compose -f docker-compose-build.yml up -d
+      ```
+
+      
