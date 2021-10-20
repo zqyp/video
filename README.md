@@ -1,7 +1,9 @@
 ### 说明
-   这是一个使用docker 启动app/ 下指定xxx.jar的项目，app下的路径均为绝对路径，参见deploy/下
+   这是一个使用docker 启动app/ 下指定xxx.jar的项目，app下的路径均为绝对路径，参见deploy/下的dockerfile文件配置。
 
-的dockerfile文件配置。
+---
+
+### 使用
 
 1. 新建/usr/local/docker-apps/文件夹：存放运行的项目。
 
