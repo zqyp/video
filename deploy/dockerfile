@@ -3,11 +3,14 @@ FROM jrottenberg/ffmpeg:3.3-alpine
 FROM openjdk:8
 MAINTAINER zp
 
+WORKDIR /video/app
+
 COPY --from=0 / /
-COPY hcnet ./home/opt/hcnet
+COPY hcnet /home/opt/hcnet
+#COPY ../app/application.yml
+#ADD ../app/*.jar video.jar
 
-#ADD /video-0.0.1-SNAPSHOT.jar video.jar
-
-ENTRYPOINT ["java","-jar","/usr/local/docker-apps/video/app/video-0.0.1-SNAPSHOT.jar","--spring.config.location=/usr/local/docker-apps/video/app/application.yml"]
+ENTRYPOINT ["java","-jar","video-0.0.1-SNAPSHOT.jar","--spring.config.location=application.yml"]
 
 EXPOSE 8003
+
