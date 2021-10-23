@@ -1,13 +1,13 @@
 version: "3"
 services:
   web:
-    image: zzpp/video:v3
+    image: zzpp/video:v5
     container_name: video
     hostname: video
     ports:
       - 8003:8003
     volumes:
-      - /usr/local/docker-apps/video/app:/usr/local/docker-apps/video/app
+      - ./app:/video/app
     environment:
       TZ: Asia/Shanghai
     restart: unless-stopped

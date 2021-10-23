@@ -2,15 +2,15 @@ version: "3"
 services:
   web:
     image: zzpp/video
-    build: 
-        context: /usr/local/docker-apps/video/deploy
-        dockerfile: dockerfile
+    build:
+      context: ./deploy
+      dockerfile: dockerfile
     container_name: video
     hostname: video
     ports:
       - 8003:8003
     volumes:
-      - /usr/local/docker-apps/video/app:/usr/local/docker-apps/video/app
+      - ./app:/video/app
     environment:
       TZ: Asia/Shanghai
     restart: unless-stopped
@@ -18,9 +18,9 @@ services:
       - nhf:nhf
   nhf:
     image: zzpp/nhf
-    build: 
-        context: /usr/local/docker-apps/nginx-http-flv/deploy
-        dockerfile: dockerfile
+    build:
+      context: ../nginx-http-flv/deploy
+      dockerfile: dockerfile
     container_name: nhf
     hostname: nhf
     ports:
