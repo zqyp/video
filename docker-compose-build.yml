@@ -14,8 +14,8 @@ services:
     environment:
       TZ: Asia/Shanghai
     restart: unless-stopped
-    links:
-      - nhf:nhf
+    depends_on:
+      - nhf
   nhf:
     image: zzpp/nhf
     build:
