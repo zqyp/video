@@ -10,6 +10,13 @@
    ```shell
    git clone https://github.com/zqyp/video.git
    ```
+   
+   或
+   
+   ```shell
+    git clone git://github.com/zqyp/video.git
+    ```
+    
 
 3. 进入app/下，放入项目启动需要的video-0.0.1-SNAPSHOT.jar、application.yml、camera.txt文件。
 
