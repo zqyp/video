@@ -14,7 +14,7 @@ services:
     depends_on:
       - nhf
   nhf:
-    image: zzpp/nginx-http-flv:v1
+    image: zzpp/nginx-http-flv:v5
     container_name: nhf
     hostname: nhf
     ports:
