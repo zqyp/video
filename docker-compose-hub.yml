@@ -3,7 +3,6 @@ services:
   web:
     image: zzpp/video:v5
     container_name: video
-    hostname: video
     ports:
       - 8003:8003
     volumes:
@@ -16,7 +15,6 @@ services:
   nhf:
     image: zzpp/nginx-http-flv:v6
     container_name: nhf
-    hostname: nhf
     ports:
       - 1935:1935
       - 9000:9000
