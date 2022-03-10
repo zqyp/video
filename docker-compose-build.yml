@@ -12,7 +12,7 @@ services:
       - ./app:/video/app
     environment:
       TZ: Asia/Shanghai
-    restart: unless-stopped
+    restart: always
     depends_on:
       - nhf
   nhf:
@@ -24,4 +24,4 @@ services:
     ports:
       - 1935:1935
       - 9000:9000
-    restart: unless-stopped
+    restart: always
